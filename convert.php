@@ -6,9 +6,33 @@ $files = array_filter($files, static function (string $file) {
     return false !== strpos($file, '.svg');
 });
 
+$iconNames = [];
+
 foreach ($files as $file) {
-    convertSVG($file);
+    $iconNames[] = convertSVG($file);
 }
+
+// Print example javascript.
+if (!empty($iconNames)) {
+    print "\nExample Javascript:\n\n";
+    print "import { library, dom } from '@fortawesome/fontawesome-svg-core';\n\n";
+
+    foreach ($iconNames as $iconName) {
+        print "import { $iconName } from '../icons/$iconName';\n";
+    }
+
+    print "\n";
+    print "library.add(\n";
+    foreach ($iconNames as $key => $iconName) {
+        print "    $iconName";
+        if (($key+1) !== count($iconNames)) {
+            print ",";
+        }
+        print "\n";
+    }
+    print ");\n\ndom.watch();\n\n\n";
+}
+
 
 function convertSVG(string $file) {
 
@@ -72,4 +96,6 @@ exports.svgPathData = svgPathData;
 ";
 
     file_put_contents($prefix.$iconNameCamelCase.'.js', $iconJS);
+
+    return $prefix.$iconNameCamelCase;
 }
