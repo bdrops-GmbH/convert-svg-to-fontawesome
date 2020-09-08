@@ -57,6 +57,20 @@ function convertSVG(string $file) {
         $d = (string) $path->attributes()->d;
         $paths[] = trim($d);
     }
+    foreach ($svg->g as $group) {
+        foreach ($group->path as $path) {
+            $d = (string) $path->attributes()->d;
+            $paths[] = trim($d);
+        }
+    }
+    foreach ($svg->g as $group) {
+        foreach ($group->g as $subgroup) {
+            foreach ($subgroup->path as $path) {
+                $d = (string) $path->attributes()->d;
+                $paths[] = trim($d);
+            }
+        }
+    }
     $pathsString = implode(' ', $paths);
 
     $iconNameClass = implode('-', $iconNameParts);
