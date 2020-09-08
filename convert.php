@@ -97,5 +97,19 @@ exports.svgPathData = svgPathData;
 
     file_put_contents($prefix.$iconNameCamelCase.'.js', $iconJS);
 
+    $iconTS = "import { IconDefinition, IconPrefix, IconName } from \"@fortawesome/fontawesome-common-types\";
+export const definition: IconDefinition;
+export const $prefix$iconNameCamelCase: IconDefinition;
+export const prefix: IconPrefix;
+export const iconName: IconName;
+export const width: number;
+export const height: number;
+export const ligatures: string[];
+export const unicode: string;
+export const svgPathData: string;
+";
+
+    file_put_contents($prefix.$iconNameCamelCase.'.d.ts', $iconTS);
+
     return $prefix.$iconNameCamelCase;
 }
