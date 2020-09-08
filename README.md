@@ -25,7 +25,7 @@ z_mein_icon.svg
 
 Generierte Icon Klasse:
 ```HTML
-<span class="fa z-mein-icon"></span>
+<span class="z fa-mein-icon"></span>
 ```
 
 Generierte Icon Javascript Datei:
