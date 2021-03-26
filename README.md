@@ -18,6 +18,8 @@ All SVG files have to be named in the following manner:
 prefix_file_name.svg
 ```
 
+❗The SVG file names must be lowercase snake case
+
 #### Example
 
 SVG source file:
