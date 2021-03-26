@@ -1,48 +1,50 @@
 # Convert SVG to Fontawesome JS
 
-Wandelt alle SVG Dateien im selben Verzeichnis in Fontawesome JS Dateien um.
+Converts all SVG files in the same directory to Fontawesome Javascript & Typescript files.
 
-## Verwendung
+## Usage
+
+Put your SVG icons and the script in the same folder and run:
 
 ```
 php convert.php
 ```
 
-## Voraussetzungen
+## Prerequisites
 
-Die SVG Quelldateien müsssen wie folgt benannt sein:
+All SVG files have to be named in the following manner:
 
 ```
-prefix_datei_name.svg
+prefix_file_name.svg
 ```
 
-#### Beispiel
+#### Example
 
-Quelldatei:
+SVG source file:
 ```
-z_mein_icon.svg
+z_my_icon.svg
 ```
 
-Generierte Icon Klasse:
+Resulting icon CSS class:
 ```HTML
-<span class="z fa-mein-icon"></span>
+<span class="z fa-my-icon"></span>
 ```
 
-Generierte Icon Javascript Datei:
+Resulting icon Javascript file:
 
 ```
-zMeinIcon.js
+zMyIcon.js
 ```
 
-#### Einbindungsbeispiel
+#### Example use
 
 ```Javascript
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 
-import { zMeinIcon } from '../icons/zMeinIcon';
+import { zMyIcon } from './icons/zMyIcon';
 
 library.add(
-    zMeinIcon
+    zMyIcon
 );
 
 dom.watch();
