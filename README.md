@@ -30,10 +30,11 @@ Resulting icon CSS class:
 <span class="z fa-my-icon"></span>
 ```
 
-Resulting icon Javascript file:
+Resulting icon files:
 
 ```
 zMyIcon.js
+zMyIcon.d.ts
 ```
 
 #### Example use
