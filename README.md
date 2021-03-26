@@ -1,4 +1,4 @@
-# Convert SVG to Fontawesome JS
+# Convert SVG to Fontawesome Javascript/Typescript
 
 Converts all SVG files in the same directory to Fontawesome Javascript & Typescript files.
 
